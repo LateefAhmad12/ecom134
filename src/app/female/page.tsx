@@ -1,13 +1,13 @@
 import { client } from "@/lib/sanityClient"
-import Wraper from "../../../components/shared/wraper"
+import Wraper from '../../../components/shared/wraper'
 import { Iproducts } from "../interface"
 import Image from "next/image"
 import { urlForImage } from "../../../sanity/lib/image"
 
 
 
-export const getFemaleProductData = async() =>{
-    const res = await client.fetch(`*[_type== 'product']{
+export const getProductData = async() =>{
+    const res = await client.fetch(`*[_type== 'product' && category->name=="Female"]{
       price,
       image,
       _id,
@@ -20,8 +20,7 @@ export const getFemaleProductData = async() =>{
 }
 
 export default async function FemaleProducts() {
-    const data:Iproducts[] = await getFemaleProductData()
-    
+    const data:Iproducts[] = await getProductData()
   return (
     <Wraper>
         <section className=" mt-8">
@@ -29,7 +28,7 @@ export default async function FemaleProducts() {
             {data.map((item)=>(
                     
                       <div key={item._id} className="mt-16">
-                      <Image src={urlForImage(item.image).url()} alt={item.title} width={400} height={400} className=" w-80 h-80"/>
+                      <Image src={urlForImage(item.image).url()} alt={item.title} width={400} height={400} className="w-80 h-80"/>
                       <p className=" text-lg font-bold text-black">{item.title}</p>
                       <p className=" text-xl font-bold text-black">${item.price}</p>
                       </div>
@@ -40,3 +39,4 @@ export default async function FemaleProducts() {
     </Wraper>
   )
 }
+

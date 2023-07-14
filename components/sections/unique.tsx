@@ -15,7 +15,7 @@ const Unique = () => {
         <div className=" col-span-2 grid grid-cols-2 gap-5">
           <div className=" relative col-span-2 h-full w-full  xl:col-span-1 z-10">
             <div className="grid grid-cols-2 gap-10 mr-20">
-              <div className=" ">
+              <div>
                 <h4 className=" text-xl max-w-[200px] font-bold">Using Good Quality Materials</h4>
                 <p className="mt-5 text-lg max-w-xs italic font-thin tracking-widest text-gray-700">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.

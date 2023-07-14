@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <section className=" mt-20">
+    <section className=" mt-12">
         <Wraper>
         <footer className="text-gray-600 ">
   <div className="container px-5 py-24 mx-auto flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">

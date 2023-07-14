@@ -21,7 +21,6 @@ export const getProductData = async() =>{
 
 export default async function AllProducts() {
     const data:Iproducts[] = await getProductData()
-    
   return (
     <Wraper>
         <section className=" mt-8">
@@ -29,7 +28,7 @@ export default async function AllProducts() {
             {data.map((item)=>(
                     
                       <div key={item._id} className="mt-16">
-                      <Image src={urlForImage(item.image).url()} alt={item.title} width={400} height={400} className=" w-80 h-80"/>
+                      <Image src={urlForImage(item.image).url()} alt={item.title} width={400} height={400} className="w-80 h-80"/>
                       <p className=" text-lg font-bold text-black">{item.title}</p>
                       <p className=" text-xl font-bold text-black">${item.price}</p>
                       </div>
