@@ -1,11 +1,14 @@
-import { Image as sImage } from "sanity"
+
 
 export interface Iproducts {
-    title: string,
+    image: any
+    name: string,
     _id: string,
     price: number,
-    description:string,
-    image: sImage,
+    slug: {
+        current:string
+    }
+    subcat:string
     category: {
         name: string
     }

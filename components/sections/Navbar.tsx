@@ -19,16 +19,16 @@ function Navbar() {
             </div>
             <div className="hidden md:flex gap-6 ">
                 
-                <Link href={"/female"}><MenubarLabel className="text-lg font-semibold">
+                <Link href={"/female"}><MenubarLabel className="text-lg font-normal">
                     Female
                 </MenubarLabel></Link>
-                <Link href={"/male"}><MenubarLabel className="text-lg font-semibold">
+                <Link href={"/male"}><MenubarLabel className="text-lg font-normal">
                     Male
                 </MenubarLabel></Link>
-                <Link href={"/kids"}><MenubarLabel className="text-lg lg:font-semibold">
+                <Link href={"/kids"}><MenubarLabel className="text-lg lg:font-normal">
                     Kids
                 </MenubarLabel></Link>
-                <Link href={"/allProducts"}><MenubarLabel className="text-lg font-semibold">
+                <Link href={"/products"}><MenubarLabel className="text-lg font-normal">
                     All Products
                 </MenubarLabel></Link>
                 

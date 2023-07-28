@@ -2,7 +2,7 @@ import React from 'react'
 import Wraper from '../shared/wraper'
 import Image from 'next/image'
 
-export default function () {
+export default function Promotion() {
   return (
     <section className=' mt-14 mb-2'>
 

@@ -8,30 +8,30 @@ import { client } from "../sanity/lib/client";
 import {Iproducts} from "@/app/interface"
 import { urlForImage } from "../sanity/lib/image";
 import Slider from "react-slick";
+import Link from "next/link";
 
 
 
 
 
 export const getProductData = async() =>{
-  const res = await client.fetch(`*[_type== 'product']{
-    price,
-    image,
+  const res = await client.fetch(`*[_type == "product"]{
     _id,
-    title,
-    category -> {
-      name
-    }
+    name,
+    subcat,
+    image,
+    price,
+    slug {
+      current
+    },
+
   }`)
   return res
-}
-
-
-
-
+};
 
 
 export default async function Products() {
+  const data:Iproducts[] = await getProductData()
 
   var settings = {
     dots: true,
@@ -68,36 +68,45 @@ export default async function Products() {
     ]
   };
 
-
-
-  const data:Iproducts[] = await getProductData()
   return (
-    
-    
+  
       <section className=' mt-14 mb-2'>
 
-        <Wraper>
-            
-                <h2 className=' text-center text-lg text-blue-700 font-semibold font-sans'>Products</h2>
-                <h3 className=' text-center text-3xl text-black font-bold
-                capitalize tracking-wide font-serif mt-6'>
-                Check What We Have</h3>
-            
-          <div className=" mt-8">
-            <Slider {...settings}>
-            {data.map((item)=>(
-                      <>
-                      <Image src={urlForImage(item.image).url()} alt={item.title} width={400} height={400} className=" w-80 h-80 hover:w-[22rem] hover:scale-y-110 hover:scale-x-110 duration-300"/>
-                      <p className=" text-lg font-bold text-black mt-3">{item.title}</p>
-                      <p className=" text-xl font-bold text-black">${item.price}</p>
-                      </>
-                  ))}
-            </Slider>
-            </div>
-        
-      </Wraper>
-    </section>
+<Wraper>
+    
+        <h2 className=' text-center text-lg text-blue-700 font-semibold font-sans'>Products</h2>
+        <h3 className=' text-center text-3xl text-black font-bold
+        capitalize tracking-wide font-serif mt-6'>
+        Check What We Have</h3>
+    
+  <div className=" mt-8">
+    <Slider {...settings}>
 
     
-  )
+    {data.map((item)=> (
+              <Link key={item._id}
+              href={`/products/${item.slug.current}`}>
+              <div >
+              <Image src={urlForImage(item.image[0]).url()} alt={item.name} width={400} height={400} className=" w-80 h-80 hover:w-[22rem] hover:scale-y-110 hover:scale-x-110 duration-300"/>
+              <p className=" text-lg font-semibold mt-3">{item.name}</p>
+              <p className=" text-xl font-semibold">${item.price.toFixed(2)}</p>
+              </div>
+              </Link>
+      
+      
+          ))}
+          
+    </Slider>
+    </div>
+
+</Wraper>
+</section>
+    
+  
+  
+    )
 }
+
+
+
+

@@ -14,16 +14,16 @@ const News = () => {
               placeholder="Input email address"
               className="px-2 border border-black text-sm py-2 lg:w-[30%] sm:w-[40%] w-full"
             />
-            <button className="text-white  bg-[#212121] px-8 py-2">
+            <button className="text-white  bg-[#212121] px-8 py-2 border border-gray-600">
               Get Started
             </button>
           </div>
           <div className="absolute inset-0 overflow-hidden text-[5rem] sm:text-8xl font-bold tracking-widest text-gray-300/70 -z-10">
               Newsletter
             </div>
-          <div className="absolute bs:text-center w-full font-bold text-[4rem] bs:text-[4.8rem] sm:[6.2rem] lg:text-[7.5rem]  tracking-widest -z-[10] text-[#212121]/5 overflow-hidden">
+          {/* <div className="absolute bs:text-center w-full font-bold text-[4rem] bs:text-[4.8rem] sm:[6.2rem] lg:text-[7.5rem]  tracking-widest -z-[10] text-[#212121]/5 overflow-hidden">
             Newsletter
-          </div>
+          </div> */}
         </div>
       </div>
     </Wraper>
