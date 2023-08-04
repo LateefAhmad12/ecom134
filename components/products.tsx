@@ -34,12 +34,13 @@ export default async function Products() {
   const data:Iproducts[] = await getProductData()
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -80,23 +81,33 @@ export default async function Products() {
         Check What We Have</h3>
     
   <div className=" mt-8">
+    <div className=" flex">
     <Slider {...settings}>
 
     
     {data.map((item)=> (
-              <Link key={item._id}
-              href={`/products/${item.slug.current}`}>
-              <div >
-              <Image src={urlForImage(item.image[0]).url()} alt={item.name} width={400} height={400} className=" w-80 h-80 hover:w-[22rem] hover:scale-y-110 hover:scale-x-110 duration-300"/>
+      
+      
+      
+      
+              <div key={item._id}>
+              
+              <Link
+               href={`/products/${item.slug.current}`}>
+              <Image src={urlForImage(item.image[0]).url()} alt={item.name} width={400} height={400} className=" flex w-80 h-80 hover:w-[22rem] hover:scale-y-110 hover:scale-x-110 ease-in duration-300"/>
+              </Link>
               <p className=" text-lg font-semibold mt-3">{item.name}</p>
               <p className=" text-xl font-semibold">${item.price.toFixed(2)}</p>
+              
+              
               </div>
-              </Link>
-      
       
           ))}
           
+        
+          
     </Slider>
+    </div>
     </div>
 
 </Wraper>
