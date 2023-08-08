@@ -1,10 +1,11 @@
-import { client } from "@/lib/sanityClient"
+
 import Wraper from "../../../components/shared/wraper"
 import { Iproducts } from "../interface"
 import Image from "next/image"
-import { urlForImage } from "../../../sanity/lib/image"
 import Link from "next/link"
 import { Image as sImage } from "sanity"
+import { client } from "../../../sanity/lib/client"
+import { urlForImage } from "../../../sanity/lib/image"
 
 
 

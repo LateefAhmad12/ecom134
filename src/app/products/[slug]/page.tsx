@@ -1,12 +1,12 @@
 import { Iproducts } from "@/app/interface"
-import { client } from "@/lib/sanityClient"
 import Wraper from "../../../../components/shared/wraper"
 import Image from "next/image"
-import { urlForImage } from "../../../../sanity/lib/image"
 import Sizes from "../../../../components/sizes"
 import Quantity from "../../../../components/Quantity"
 import { Button } from "../../../../components/ui/button"
 import { BiCart } from "react-icons/bi"
+import { client } from "../../../../sanity/lib/client"
+import { urlForImage } from "../../../../sanity/lib/image"
 
 type Props = {
     params:{
@@ -43,7 +43,7 @@ const ProdDetails = async ({params}:Props) => {
             <div className=" flex justify-between gap-6">
 
                     {/* small image */}
-        <div className="flex flex-col gap-4">
+        {/* <div className="flex flex-col gap-4">
             <div className="  w-14 h-14">
             <Image src={urlForImage(data.image[0]).url()} alt={data.name} width={70} height={70}/>
             </div>
@@ -60,7 +60,7 @@ const ProdDetails = async ({params}:Props) => {
             <Image src={urlForImage(data.image[3]).url()} alt={data.name} width={70} height={70}/>
             </div>
 
-        </div>
+        </div> */}
 
                     {/* large image */}
             <div>
