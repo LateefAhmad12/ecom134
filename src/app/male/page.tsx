@@ -32,9 +32,9 @@ export default async function MaleProducts() {
         <section className=" mt-8">
             <div className=" flex flex-wrap gap-6">
             {data.map((item)=>(
-                      <Link 
+                      <Link key={item._id}
                       href={`/products/${item.slug.current}`}>
-                      <div key={item._id} className="mt-16">
+                      <div className="mt-16">
                       <Image src={urlForImage(item.image[0]).url()} alt={item.name} width={400} height={400} className="w-80 h-80"/>
                       <p className=" text-lg font-bold text-black">{item.name}</p>
                       <p className=" text-xl font-bold text-black">${item.price}</p>
