@@ -150,3 +150,4 @@ const ProdDetails = async ({params}:Props) => {
 }
 
 export default ProdDetails
+

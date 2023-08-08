@@ -8,7 +8,7 @@ import { client } from '../../../sanity/lib/client'
 
 
 
-export const getProductData = async() =>{
+const getMaleProductData = async() =>{
     const res = await client.fetch(`*[_type== 'product' && category->name=="Male"]{
       price,
       name,
@@ -26,7 +26,7 @@ export const getProductData = async() =>{
 }
 
 export default async function MaleProducts() {
-    const data:Iproducts[] = await getProductData()
+    const data:Iproducts[] = await getMaleProductData()
   return (
     <Wraper>
         <section className=" mt-8">

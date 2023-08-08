@@ -8,7 +8,7 @@ import { urlForImage } from '../../../sanity/lib/image'
 
 
 
-export const getProductData = async() =>{
+const getKidsProductData = async() =>{
     const res = await client.fetch(`*[_type== 'product' && category->name=="Kids"]{
       price,
       image,
@@ -21,11 +21,12 @@ export const getProductData = async() =>{
         name
       }
     }`)
+    
     return res
 }
 
 export default async function KidsProducts() {
-    const data:Iproducts[] = await getProductData()
+    const data:Iproducts[] = await getKidsProductData()
   return (
     <Wraper>
         <section className=" mt-8">
