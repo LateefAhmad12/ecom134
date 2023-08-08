@@ -31,8 +31,8 @@ export default async function MaleProducts() {
     <Wraper>
         <section className=" mt-8">
             <div className=" flex flex-wrap gap-6">
-            {data.map((item)=>(
-                      <div key={item._id}>
+            {data.map((item, index)=>(
+                      <div key={index}>
                       <Link
                       href={`/products/${item.slug.current}`}>
                       <div className="mt-16">
