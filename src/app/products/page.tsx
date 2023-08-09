@@ -37,7 +37,7 @@ const AllProducts =async ()=> {
            
             {prodData.map((product, index)=>(
                     <div 
-                      key={`${product._id}+${index}`} className="mt-16">
+                      key={product._id} className="mt-16">
                     <Link 
                      href={`/products/${product.slug.current}`}>
                       <Image src={urlForImage(product.image[0]).url()} alt={product.name} width={400} height={400} className="w-80 h-80"/>

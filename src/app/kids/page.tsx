@@ -32,7 +32,7 @@ export default async function KidsProducts() {
         <section className=" mt-8">
             <div className=" flex flex-wrap gap-6">
             {data.map((item, index)=>(
-                      <div key={`${item._id}+${index}`}>
+                      <div key={item._id}>
                       <Link 
                       href={`/products/${item.slug.current}`}>
                       <div className="mt-16">
