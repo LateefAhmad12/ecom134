@@ -42,27 +42,7 @@ export default async function ProdDetails({params}:Props) {
     <div className=" flex flex-wrap py-10 mt-12">
             <div className=" flex justify-between gap-6">
 
-                    {/* small image */}
-        {/* <div className="flex flex-col gap-4">
-            <div className="  w-14 h-14">
-            <Image src={urlForImage(data.image[0]).url()} alt={data.name} width={70} height={70}/>
-            </div>
-
-            <div className=" w-14 h-14">
-            <Image src={urlForImage(data.image[1]).url()} alt={data.name} width={70} height={70}/>
-            </div>
-
-            <div className=" w-14 h-14">
-            <Image src={urlForImage(data.image[2]).url()} alt={data.name} width={70} height={70}/>
-            </div>
-
-            <div className="  w-14 h-14">
-            <Image src={urlForImage(data.image[3]).url()} alt={data.name} width={70} height={70}/>
-            </div>
-
-        </div> */}
-
-                    {/* large image */}
+                
             <div>
                 <Image src={urlForImage(data.image[0]).url()} alt={data.name} width={600} height={600}/>
             </div>
