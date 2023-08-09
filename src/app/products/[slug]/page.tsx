@@ -13,8 +13,7 @@ type Props = {
         slug:string
     }
 }
-
-export const getProductDetails = async ({params}:Props) =>{
+const getProductDetails = async ({params}:Props) =>{
     const res = await client.fetch(`*[_type == "product" && slug.current == "${params.slug}"][0]{
       _id,
       name,
