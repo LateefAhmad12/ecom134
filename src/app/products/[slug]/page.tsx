@@ -37,7 +37,7 @@ export default async function ProdDetails({params}:Props) {
     const data:any = await getProductDetails({params});
     
   return (
-    <section className=" bg-gray-100">
+    <div className=" bg-gray-100">
     <Wraper>
     <div className=" flex flex-wrap py-10 mt-12">
             <div className=" flex justify-between gap-6">
@@ -125,7 +125,7 @@ export default async function ProdDetails({params}:Props) {
 
     </div>
     </Wraper>
-    </section>
+    </div>
   )
 }
 
