@@ -148,5 +148,16 @@ export default async function ProdDetails({params}:Props) {
   )
 }
 
-
+export async function generateStaticParams() {
+    const query = `*[_type == "category"] {
+        slug {
+        current
+        }
+    }`;
+    const res:any = await client.fetch(query);
+  
+    return res.map((category:any) => ({
+      slug: category.slug.current,
+    }));
+  }
 
