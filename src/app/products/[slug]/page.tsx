@@ -13,7 +13,7 @@ type Props = {
         slug:string
     }
 }
-const getProductDetails = async ({params}:Props) =>{
+const getProductDetails = async ({params}:Props) => {
     const query = `*[_type == "product" && slug.current == "${params.slug}"][0]{
         _id,
         name,
