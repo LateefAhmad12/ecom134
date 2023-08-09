@@ -32,7 +32,7 @@ const getProductDetails = async ({params}:Props) =>{
 
 
 
-const ProdDetails = async ({params}:Props) => {
+export default async function ProdDetails({params}:Props) {
     const data:Iproducts = await getProductDetails({params});
     
   return (
@@ -148,5 +148,5 @@ const ProdDetails = async ({params}:Props) => {
   )
 }
 
-export default ProdDetails
+
 
