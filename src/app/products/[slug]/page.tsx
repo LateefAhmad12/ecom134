@@ -13,7 +13,7 @@ type Props = {
         slug:string
     }
 }
-const getProductDetails = async ({params}:Props) => {
+export const getProductDetails = async ({params}:Props) => {
     const query = `*[_type == "product" && slug.current == "${params.slug}"][0]{
         _id,
         name,
@@ -149,7 +149,7 @@ export default async function ProdDetails({params}:Props) {
   )
 }
 
-export async function generateStaticParams() {
+export  async function generateStaticParams() {
     const query = `*[_type == "category"] {
         slug {
         current
