@@ -34,7 +34,7 @@ export const getProductDetails = async ({params}:Props) => {
 
 
 export default async function ProdDetails({params}:Props) {
-    const data:Iproducts = await getProductDetails({params});
+    const data:any = await getProductDetails({params});
     
   return (
     <section className=" bg-gray-100">
