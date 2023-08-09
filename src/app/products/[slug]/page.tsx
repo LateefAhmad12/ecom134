@@ -14,17 +14,18 @@ type Props = {
     }
 }
 const getProductDetails = async ({params}:Props) =>{
-    const res = await client.fetch(`*[_type == "product" && slug.current == "${params.slug}"][0]{
-      _id,
-      name,
-      subcat,
-      image,
-      price,
-      slug {
-        current
-      },
-  
-    }`)
+    const query = `*[_type == "product" && slug.current == "${params.slug}"][0]{
+        _id,
+        name,
+        subcat,
+        image,
+        price,
+        slug {
+          current
+        },
+    
+      }`
+    const res = await client.fetch(query)
     return res
 }
  
