@@ -26,8 +26,8 @@ const getProductDetails = async ({params}:Props) =>{
     
       }`
     const res = await client.fetch(query)
-    return res
-}
+    return res;
+};
  
 
 
